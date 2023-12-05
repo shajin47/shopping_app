@@ -34,6 +34,7 @@ class LoginAPIView(APIView):
         print(f"Email: {email}")
         print(f"Password: {password}")
         user = authenticate(request, email=email, password=password)
+        print(user)
         if user:
             login(request, user)
             refresh = RefreshToken.for_user(user)
